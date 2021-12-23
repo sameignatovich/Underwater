@@ -10,20 +10,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      url: null,
-    };
-  },
   methods: {
     setPreviewUrl(event) {
-      const file = event.target.files[0];
-      this.url = URL.createObjectURL(file);
-    },
-  },
-  watch: {
-    url(newUrl) {
-      this.$emit('setPreview', newUrl);
+      const fileUrl = URL.createObjectURL(event.target.files[0]);
+      this.$store.dispatch('createAttachmentPreview', fileUrl);
     },
   },
 };

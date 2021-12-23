@@ -7,9 +7,9 @@
 
 <script>
 export default {
-  props: {
-    previewUrl: {
-      type: String,
+  computed: {
+    previewUrl() {
+      return this.$store.getters.attachmentPreview;
     },
   },
 };

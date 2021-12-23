@@ -4,12 +4,12 @@
       <div class="row gx-5">
         <div class="col">
           <rounded-block>
-            <file-input @set-preview="newPreview" />
+            <file-input />
           </rounded-block>
         </div>
         <div class="col">
           <rounded-block>
-            <file-preview :preview-url="previewUrl" />
+            <file-preview />
           </rounded-block>
         </div>
       </div>
@@ -30,16 +30,6 @@ export default {
     FileInput,
     FilePreview,
     FiltersInput,
-  },
-  data() {
-    return {
-      previewUrl: null,
-    };
-  },
-  methods: {
-    newPreview(previewUrl) {
-      this.previewUrl = previewUrl;
-    },
   },
 };
 </script>
