@@ -15,7 +15,7 @@
     <input class="attachment-input fill"
            id="formFileLg"
            type="file"
-           @change="setPreviewUrl">
+           @change="setAttachment">
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
     },
   },
   methods: {
-    setPreviewUrl(event) {
+    setAttachment(event) {
       const fileUrl = URL.createObjectURL(event.target.files[0]);
       this.$store.dispatch('setAttachmentUrl', fileUrl);
     },
