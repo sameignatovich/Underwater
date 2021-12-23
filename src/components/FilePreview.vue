@@ -13,9 +13,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .wraper {
-    position: relative;
-    height: 100%;
-    width: 100%;
-  }
 </style>

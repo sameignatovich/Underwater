@@ -1,6 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
 @import '~bootstrap-icons/font/bootstrap-icons.css';
 
+.wraper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
 .centered {
   margin: 0;
   position: absolute;
