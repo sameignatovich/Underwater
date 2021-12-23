@@ -4,9 +4,14 @@
       <i class="bi bi-upload"></i><br/>
       Upload file
     </h6>
-    <img v-if="previewUrl"
-         :src="previewUrl"
-         class="img-fluid attachment-preview fill radius" />
+    <div v-else>
+      <img :src="previewUrl"
+           class="img-fluid attachment-preview fill radius" />
+      <button @click="removeAttachment"
+              class="btn btn-sm btn-danger rounded-circle btn-remove">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
     <input class="attachment-input fill"
            id="formFileLg"
            type="file"
@@ -24,7 +29,10 @@ export default {
   methods: {
     setPreviewUrl(event) {
       const fileUrl = URL.createObjectURL(event.target.files[0]);
-      this.$store.dispatch('createAttachmentPreview', fileUrl);
+      this.$store.dispatch('setAttachmentUrl', fileUrl);
+    },
+    removeAttachment() {
+      this.$store.dispatch('setAttachmentUrl', null);
     },
   },
 };
@@ -37,6 +45,13 @@ export default {
     width: 100%;
     border: 2px dashed #dee2e6;
 
+    .btn-remove {
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      opacity: 0.7;
+      z-index: 10;
+    }
     .attachment-input {
       opacity: 0;
       cursor: pointer;
