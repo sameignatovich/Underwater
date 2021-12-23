@@ -1,5 +1,9 @@
 <template>
   <div class="form-wraper radius">
+    <h6 class="display-6 center text-center text-secondary">
+      <i class="bi bi-upload"></i><br/>
+      Upload file
+    </h6>
     <img v-if="previewUrl"
          :src="previewUrl"
          class="img-fluid attachment-preview fill radius" />
@@ -37,6 +41,16 @@ export default {
       opacity: 0;
       cursor: pointer;
     }
+  }
+
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
 
   .radius {
