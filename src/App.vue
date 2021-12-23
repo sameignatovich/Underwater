@@ -1,26 +1,49 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <div class="shadow-lg p-3 m-5 rounded">
+      <div class="row gx-5">
+        <div class="col">
+          <rounded-block>
+            <file-input @set-preview="newPreview" />
+          </rounded-block>
+        </div>
+        <div class="col">
+          <rounded-block>
+            <file-preview :preview-url="previewUrl" />
+          </rounded-block>
+        </div>
+      </div>
+      <filters-input />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import RoundedBlock from '@/components/RoundedBlock.vue';
+import FileInput from '@/components/FileInput.vue';
+import FilePreview from '@/components/FilePreview.vue';
+import FiltersInput from '@/components/FiltersInput.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld,
+    RoundedBlock,
+    FileInput,
+    FilePreview,
+    FiltersInput,
+  },
+  data() {
+    return {
+      previewUrl: null,
+    };
+  },
+  methods: {
+    newPreview(previewUrl) {
+      this.previewUrl = previewUrl;
+    },
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
