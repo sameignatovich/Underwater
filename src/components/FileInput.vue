@@ -1,6 +1,6 @@
 <template>
   <div class="form-wraper radius">
-    <h6 class="display-6 center text-center text-secondary">
+    <h6 v-if="!previewUrl" class="display-6 center text-center text-secondary">
       <i class="bi bi-upload"></i><br/>
       Upload file
     </h6>
