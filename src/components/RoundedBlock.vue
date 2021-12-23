@@ -7,6 +7,6 @@
 <style scoped lang="scss">
   .data-block {
     height: 1px;
-    min-height: 350px;
+    min-height: 318.5px;
   }
 </style>
