@@ -1,6 +1,6 @@
 <template>
   <div class="wraper">
-    <div v-if="attachmentReady" class="centered text-center">
+    <div v-show="attachmentReady" class="centered text-center">
       <div :class="{uploading}">
         <h1><i class="bi bi-arrow-repeat"></i></h1>
       </div>
