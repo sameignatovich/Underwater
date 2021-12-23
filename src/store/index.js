@@ -10,7 +10,7 @@ export default createStore({
     },
   },
   actions: {
-    createAttachmentPreview({ commit }, url) {
+    setAttachmentUrl({ commit }, url) {
       commit('SET_ATTACHMENT_PREVIEW', url);
     },
   },
