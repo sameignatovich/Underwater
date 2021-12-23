@@ -1,6 +1,6 @@
 <template>
   <div class="wraper p-1">
-    <div class="centered text-center text-secondary">
+    <div class="centered text-center">
       <h1><i class="bi bi-easel-fill"></i></h1>
       <p>Result will be shown after uploading and processing file</p>
     </div>

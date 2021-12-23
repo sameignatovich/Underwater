@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="shadow-lg p-3 m-5 rounded">
-      <div class="row">
+      <div class="row text-secondary">
         <div class="col-md-5">
           <rounded-block>
             <file-input />
