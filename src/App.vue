@@ -8,7 +8,7 @@
           </rounded-block>
         </div>
         <div class="col-md-2 actions">
-          <actions-block />
+          <actions-block v-show="attachmentReady" />
         </div>
         <div class="col-md-5">
           <rounded-block>
@@ -16,7 +16,7 @@
           </rounded-block>
         </div>
       </div>
-      <filters-input />
+      <filters-input v-show="attachmentReady" />
     </div>
   </div>
 </template>
@@ -35,6 +35,11 @@ export default {
     FilePreview,
     ActionsBlock,
     FiltersInput,
+  },
+  computed: {
+    attachmentReady() {
+      return !!this.$store.getters.attachmentPreview;
+    },
   },
 };
 </script>

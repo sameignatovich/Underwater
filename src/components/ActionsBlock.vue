@@ -1,6 +1,6 @@
 <template>
   <div class="wraper">
-    <div v-show="attachmentReady" class="centered text-center">
+    <div class="centered text-center">
       <div :class="{uploading}">
         <h1><i class="bi bi-arrow-repeat"></i></h1>
       </div>
@@ -25,9 +25,6 @@
 <script>
 export default {
   computed: {
-    attachmentReady() {
-      return !!this.$store.getters.attachmentPreview;
-    },
     uploading() {
       return this.$store.getters.uploading;
     },
