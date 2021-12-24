@@ -5,9 +5,13 @@
         <h1><i class="bi bi-arrow-repeat"></i></h1>
       </div>
       <button @click="startUploading"
-              :disabled="uploading"
-              class="btn btn-sm btn-primary">
-        <span v-if="!uploading">
+              :disabled="uploading || uploaded"
+              class="btn btn-sm"
+              :class="[uploaded ? 'btn-success' : 'btn-primary']">
+        <span v-if="uploaded">
+          Uploaded!
+        </span>
+        <span v-else-if="!uploading">
           Upload
         </span>
         <span v-else>
@@ -26,6 +30,9 @@ export default {
     },
     uploading() {
       return this.$store.getters.uploading;
+    },
+    uploaded() {
+      return this.$store.getters.uploaded;
     },
   },
   methods: {
