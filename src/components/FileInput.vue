@@ -6,8 +6,10 @@
     </h6>
     <div v-else>
       <img :src="previewUrl"
-           class="img-fluid attachment-preview fill radius" />
-      <button @click="removeAttachment"
+           class="img-fluid attachment-preview fill radius"
+           :class="{uploading}" />
+      <button v-show="!uploading"
+              @click="removeAttachment"
               class="btn btn-sm btn-danger rounded-circle btn-remove">
         <i class="bi bi-x-lg"></i>
       </button>
@@ -15,6 +17,7 @@
     <input class="attachment-input fill"
            id="formFileLg"
            type="file"
+           :disabled="uploading"
            @change="setAttachment">
   </div>
 </template>
@@ -24,6 +27,9 @@ export default {
   computed: {
     previewUrl() {
       return this.$store.getters.attachmentPreview;
+    },
+    uploading() {
+      return this.$store.getters.uploading;
     },
   },
   methods: {
@@ -56,6 +62,10 @@ export default {
       opacity: 0;
       cursor: pointer;
     }
+  }
+
+  .uploading {
+    opacity: 0.7;
   }
 
   .radius {
